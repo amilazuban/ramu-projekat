@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RestoranAplikacijaV2.Pages.CategoryPage"
+             BackgroundColor="#292929"
+             Title="Kategorija"
+             Shell.NavBarIsVisible="False">
+
+    <ScrollView VerticalOptions="FillAndExpand" Padding="10" Margin="10,0,10,10">
+        <StackLayout>
+            <CollectionView ItemsSource="{Binding Items}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BackgroundColor="#606060"
+                               CornerRadius="10"
+                               Padding="10"
+                               Margin="0,0,0,10"
+                               HasShadow="True">
+                            <StackLayout VerticalOptions="FillAndExpand">
+                                <Label Text="{Binding Name}"
+                                       FontSize="Large"
+                                       FontAttributes="Bold"
+                                       TextColor="White"
+                                       Margin="0,0,0,10" />
+                                <Label Text="{Binding Description}"
+                                       FontSize="Small"
+                                       TextColor="#cccccc" />
+                                <Label Text="{Binding Price, StringFormat='{}{0:C}'}"
+                                       FontSize="Small"
+                                       TextColor="#cccccc" />
+                                <Button Text="Dodaj u korpu"
+                                        CommandParameter="{Binding .}"
+                                        Clicked="OnAddToCartClicked"
+                                        BackgroundColor="#aa3333"
+                                        TextColor="White"
+                                        CornerRadius="5"
+                                        WidthRequest="150"
+                                        HorizontalOptions="End" />
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

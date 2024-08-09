@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RestoranAplikacijaV2.Pages.MainPage"
+             BackgroundColor="#292929"
+             Title="Unos broja stola"
+             Shell.NavBarIsVisible="False">
+
+    <StackLayout Padding="30" Spacing="20" VerticalOptions="Center">
+        <Entry x:Name="TableNumberEntry"
+               Placeholder="Unesite broj stola"
+               PlaceholderColor="White"
+               Keyboard="Numeric"
+               FontSize="Large"
+               TextColor="White"
+               HorizontalOptions="Center"
+               WidthRequest="200" />
+        <Button Text="Nastavi" Clicked="OnContinueClicked" BackgroundColor="#aa3333" TextColor="White" />
+    </StackLayout>
+
+</ContentPage>
